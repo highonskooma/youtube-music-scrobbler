@@ -289,7 +289,7 @@ class PositionTracker:
         pass
 
     @staticmethod 
-    def deduplicate_songs(songs) -> List[Dict]:
+    def deduplicate_songs(songs: List[Dict]) -> List[Dict]:
         """Deduplicate songs accross today, yesterday, and this week.
         This avoids rereproduction issues for overlaps.
         Args:

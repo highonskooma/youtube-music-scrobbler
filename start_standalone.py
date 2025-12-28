@@ -230,17 +230,9 @@ class ImprovedProcess:
         print(f"Found {len(yesterday_songs)} songs played yesterday")
         print(f"Found {len(this_week_songs)} songs played this week")
 
-        if len(today_songs) == 0:
-            print("No songs played today. Nothing to scrobble.")
-            return True
-        
-        if len(yesterday_songs) == 0:
-            print("No songs played yesterday. Nothing to scrobble.")
-            return True
-
-        if len(this_week_songs) == 0:
-            print("No songs played this week. Nothing to scrobble.")
-            return True
+        if len(today_songs) == 0 and len(yesterday_songs) == 0 and len(this_week_songs) == 0:
+            print("No songs found from today, yesterday, or this week. Nothing to scrobble.")
+            return True        
 
         # Get existing songs from database
         cursor = self.conn.cursor()
